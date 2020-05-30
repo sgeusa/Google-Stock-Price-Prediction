@@ -51,11 +51,11 @@ keras.fit(X_train, y_train, epochs = 100, batch_size = 32)
 
 # Part 3 - Making the predictions and visualising the results
 
-# Getting the real stock price of 2017
+# Getting the real stock price of 2020
 dataset_test = pd.read_csv('C:/Users/gutanweer/Desktop/RNN/Recurrent_Neural_Networks/Google_Stock_Price_Test.csv')
 real_stock_price = dataset_test.iloc[:, 1:2].values
 
-# Getting the predicted stock price of 2017
+# Getting the predicted stock price of 2020
 dataset_total = pd.concat((df['Open'], dataset_test['Open']), axis = 0)
 inputs = dataset_total[len(dataset_total) - len(dataset_test) - 60:].values
 inputs = inputs.reshape(-1,1)
